@@ -3,10 +3,18 @@ import 'bootstrap/dist/js/bootstrap'
 import Home from './components/Home/Home'
 import { Route, Router, Routes } from 'react-router-dom'
 import Profile from './components/Profile/Profile'
+import { useSelector } from 'react-redux'
 
 function App() {
+    const darkTheme = useSelector((state) => state.theme.dark)
+
+    let appTheme = {
+        backgroundColor: darkTheme ? 'black' : 'white',
+        color: darkTheme ? 'white' : 'black',
+    }
+
     return (
-        <main className="container-fluid border">
+        <main className="container-fluid border" style={appTheme}>
             <Routes>
                 <Route path="/" element={<Home />}></Route>
                 <Route path="about" element={<Profile />} />
