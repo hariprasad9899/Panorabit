@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
-import Home from './components/Home/Home'
 import { Route, Router, Routes } from 'react-router-dom'
 import Profile from './components/Profile/Profile'
 import { useSelector } from 'react-redux'
+import Intro from './components/Home/Intro/Intro'
 
 function App() {
     const darkTheme = useSelector((state) => state.theme.dark)
@@ -14,12 +14,12 @@ function App() {
     }
 
     return (
-        <main className="container-fluid border" style={appTheme}>
+        <>
             <Routes>
-                <Route path="/" element={<Home />}></Route>
+                <Route path="/" element={<Intro />}></Route>
                 <Route path="about" element={<Profile />} />
             </Routes>
-        </main>
+        </>
     )
 }
 
