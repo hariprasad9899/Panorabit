@@ -1,0 +1,43 @@
+.centered-div {
+    width: 30rem;
+    border-radius: 1rem;
+    .account-select {
+        background-color: #fcfafa;
+        border-radius: 1rem 1rem 0rem 0rem;
+    }
+    .account-list {
+        max-height: 25rem;
+        overflow-y: scroll;
+        border-radius: 0rem 0rem 1rem 1rem;
+        background-color: #ffffff;
+        // background-color: red;
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #d8d4d4;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #cfcccc;
+        }
+        .account-list-items {
+            .acc-profile-img {
+                border-radius: 50%;
+                width: 1.8rem;
+            }
+            .acc-profile-username {
+                font-size: 1rem;
+            }
+        }
+    }
+}
