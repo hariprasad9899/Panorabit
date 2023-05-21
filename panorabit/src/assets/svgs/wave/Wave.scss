@@ -1,0 +1,17 @@
+.wave-web {
+    display: block;
+}
+.wave-mob {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .wave {
+        .wave-web {
+            display: none;
+        }
+        .wave-mob {
+            display: block;
+        }
+    }
+}
