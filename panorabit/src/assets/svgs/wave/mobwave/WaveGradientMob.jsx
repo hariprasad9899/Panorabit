@@ -7,7 +7,7 @@ export default function WaveGradientMob() {
             className="position-absolute"
             viewBox="0 0 1440 320"
         >
-            {/* <defs>
+            <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor="#7c6de1" />
                     <stop offset="20%" stopColor="#7163e6" />
@@ -15,7 +15,7 @@ export default function WaveGradientMob() {
                     <stop offset="60%" stopColor="#564ff1" />
                     <stop offset="80%" stopColor="#5243ee" />
                 </linearGradient>
-            </defs> */}
+            </defs>
             <path
                 fill="url(#gradient)"
                 fillOpacity="5"

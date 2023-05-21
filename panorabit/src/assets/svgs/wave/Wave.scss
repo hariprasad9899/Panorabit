@@ -6,12 +6,10 @@
 }
 
 @media (max-width: 768px) {
-    .wave {
-        .wave-web {
-            display: none;
-        }
-        .wave-mob {
-            display: block;
-        }
+    .wave-web {
+        display: none;
+    }
+    .wave-mob {
+        display: block;
     }
 }
