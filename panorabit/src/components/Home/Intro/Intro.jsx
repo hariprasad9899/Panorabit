@@ -7,6 +7,7 @@ export default function Intro() {
     return (
         <main className="container-fluid p-0 m-0 landing-page">
             <Wave />
+            <Accounts />
         </main>
     )
 }
