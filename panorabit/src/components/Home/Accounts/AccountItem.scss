@@ -1,0 +1,14 @@
+.acc-profile-img {
+    border-radius: 50%;
+    width: 2rem;
+}
+.acc-profile-username {
+    &:hover {
+        cursor: pointer;
+    }
+}
+.account-item {
+    &:hover {
+        background-color: #cfcccc2c;
+    }
+}

@@ -3,7 +3,6 @@
     border-radius: 1rem;
     color: #373754;
     background-color: white;
-    // font-family: 'Adobe Clean', sans-serif;
 
     .account-select {
         background-color: #f6f3f3;
@@ -33,12 +32,6 @@
 
         &::-webkit-scrollbar-thumb:hover {
             background: #cfcccc;
-        }
-        .account-list-items {
-            .acc-profile-img {
-                border-radius: 50%;
-                width: 2rem;
-            }
         }
     }
 }
