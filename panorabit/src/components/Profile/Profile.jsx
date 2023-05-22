@@ -5,7 +5,7 @@ import axios from 'axios'
 import { insertUsers } from '../../reducer/slice/accounts'
 
 export default function Profile() {
-    const { userId } = useParams()
+    const { userId = 1 } = useParams()
     const dispatch = useDispatch()
     const users = useSelector((state) => state.account.accountList)
     let singleUserInfo = users[userId - 1]

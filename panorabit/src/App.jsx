@@ -4,6 +4,7 @@ import { Route, Router, Routes } from 'react-router-dom'
 import Profile from './components/Profile/Profile'
 import { useSelector } from 'react-redux'
 import Intro from './components/Home/Intro/Intro'
+import NoPage from './components/Utilities/Loaders/NoPage'
 
 function App() {
     const darkTheme = useSelector((state) => state.theme.dark)
@@ -21,6 +22,7 @@ function App() {
                 <Route path="profile" element={<Profile />}>
                     <Route path=":userId" element={<Profile />}></Route>
                 </Route>
+                <Route path="*" element={<NoPage />} />
             </Routes>
         </>
     )
