@@ -1,0 +1,39 @@
+.option-menu {
+    .option-container {
+        width: 100%;
+        height: 40rem;
+        border-radius: 1rem;
+        background: linear-gradient(
+            to top,
+            #6454cf,
+            #5e50d9,
+            #584ce2,
+            #4f48ec,
+            #4444f6
+        );
+        .sidenav {
+            li {
+                color: #f5f5f57c;
+                border-bottom: 1px solid #f5f5f57c;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            li {
+                .active {
+                    color: white;
+                }
+            }
+            .active {
+                color: white;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .option-menu {
+        display: none;
+    }
+}

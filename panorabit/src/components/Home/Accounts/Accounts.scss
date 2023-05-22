@@ -35,3 +35,14 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .centered-div {
+        width: 80%;
+    }
+}
+@media (max-width: 576px) {
+    .centered-div {
+        width: 90%;
+    }
+}
