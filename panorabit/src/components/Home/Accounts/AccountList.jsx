@@ -35,14 +35,20 @@ export default function AccountList() {
         getUsersInfo()
     }, [])
 
+    const handleClick = (id) => {
+        console.log(id)
+    }
+
     return (
         <div className="account-list-items">
             {users.map((item) => {
                 return (
                     <AccountItem
                         key={item.id}
+                        id={item.id}
                         profilepicture={item.profilepicture}
                         username={item.username}
+                        handleClick={handleClick}
                     />
                 )
             })}
