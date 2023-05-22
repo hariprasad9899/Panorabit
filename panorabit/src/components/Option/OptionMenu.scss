@@ -12,17 +12,14 @@
             #4444f6
         );
         .sidenav {
+            overflow: hidden;
             li {
                 color: #f5f5f57c;
                 border-bottom: 1px solid #f5f5f57c;
                 &:hover {
                     cursor: pointer;
                 }
-            }
-            li {
-                .active {
-                    color: white;
-                }
+                position: relative;
             }
             .active {
                 color: white;

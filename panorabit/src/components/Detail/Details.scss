@@ -1,0 +1,22 @@
+.top-pane {
+    .menu-name {
+        font-weight: 500;
+    }
+    .profile-img {
+        width: 1.7rem;
+        border-radius: 50%;
+    }
+    .user-name {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #4d4b4b;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-pane {
+        .profile-img {
+            width: 1rem;
+        }
+    }
+}
