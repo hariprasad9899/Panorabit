@@ -1,7 +1,8 @@
 import React from 'react'
 import './AccountItem.scss'
 
-// Pure Component: Returns a div, containing profile pic and name
+// Pure component: Renders a row with profile picture and username
+
 export default function AccountItem({ profilepicture, username }) {
     return (
         <div className="row py-1 align-items-center border-bottom border-bottom-primary account-item">

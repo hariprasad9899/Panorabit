@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { insertUsers } from '../../../reducer/slice/accounts'
 import { setApiLoaded } from '../../../reducer/slice/Loader'
 
+// Maps the users data received from API into AccountItem component
+
 export default function AccountList() {
     const users = useSelector((state) => state.account.accountList)
     const apiloaded = useSelector((state) => state.loader.apiLoaded)
@@ -18,6 +20,8 @@ export default function AccountList() {
                     'https://panorbit.in/api/users.json'
                 )
                 if (response.status == 200) {
+                    // Dispatch actions to update Redux store
+                    // updating loaded state to true and add data from api to account list)
                     dispatch(setApiLoaded())
                     dispatch(insertUsers(response.data.users))
                 } else {
@@ -27,6 +31,7 @@ export default function AccountList() {
                 console.error('Error fetching data from panorbit', error)
             }
         }
+        // call the function to fetch user data when the component mounts
         getUsersInfo()
     }, [])
 

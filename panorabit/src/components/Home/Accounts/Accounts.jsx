@@ -2,6 +2,8 @@ import React from 'react'
 import './Accounts.scss'
 import AccountList from './AccountList'
 
+// Renders a centerd div, to display the list of accounts
+
 export default function Accounts() {
     return (
         <div className="container-md pb-3 position-absolute shadow-lg top-50 start-50 translate-middle centered-div">
