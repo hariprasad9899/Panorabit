@@ -5,7 +5,7 @@ import axios from 'axios'
 import { insertUsers } from '../../reducer/slice/accounts'
 import OptionMenu from '../Option/OptionMenu'
 import Detail from '../Detail/Detail'
-import './Profile.scss'
+import ManageProfile from './ManageProfile'
 
 export default function Profile() {
     const { userId = 1 } = useParams()
@@ -35,10 +35,7 @@ export default function Profile() {
         <div className="container-fluid p-2">
             {/* <h3>Profile Page and this is id number {userId}</h3>
             <pre>{JSON.stringify(singleUserInfo)}</pre> */}
-            <div className="row p-4 profile-container-wrapper">
-                <OptionMenu />
-                <Detail />
-            </div>
+            <ManageProfile />
         </div>
     )
 }
