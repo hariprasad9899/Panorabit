@@ -1,6 +1,6 @@
 import React from 'react'
-import OptionMenu from './Option/OptionMenu'
-import Detail from './Detail/Detail'
+import OptionMenu from '../Option/OptionMenu'
+import Detail from '../Detail/Detail'
 import './ManageProfile.scss'
 import { useSelector } from 'react-redux'
 

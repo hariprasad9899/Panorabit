@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { json, useLocation, useParams } from 'react-router-dom'
 import axios from 'axios'
-import { insertUsers } from '../../reducer/slice/accounts'
-import ManageProfile from './ManageProfile'
-import { setCurrentID } from '../../reducer/slice/currentId'
+import { insertUsers } from '../../../reducer/slice/accounts'
+import ManageProfile from '../ManageProfile'
+import { setCurrentID } from '../../../reducer/slice/currentId'
 
 export default function Profile() {
     const { userId = 1 } = useParams()
