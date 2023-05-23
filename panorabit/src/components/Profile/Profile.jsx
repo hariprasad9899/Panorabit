@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { json, useLocation, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { insertUsers } from '../../reducer/slice/accounts'
-import OptionMenu from '../Option/OptionMenu'
-import Detail from '../Detail/Detail'
 import ManageProfile from './ManageProfile'
+import { setCurrentID } from '../../reducer/slice/currentId'
 
 export default function Profile() {
     const { userId = 1 } = useParams()
+    const location = useLocation()
     const dispatch = useDispatch()
     const users = useSelector((state) => state.account.accountList)
     let singleUserInfo = users[userId - 1]
@@ -21,6 +21,7 @@ export default function Profile() {
                 )
                 if (response.status == 200) {
                     dispatch(insertUsers(response.data.users))
+                    dispatch(setCurrentID(userId - 1))
                 } else {
                     throw new Error('Error fetching data from panorbit')
                 }
@@ -29,13 +30,11 @@ export default function Profile() {
             }
         }
         getUsersInfo()
-    }, [userId])
+    }, [])
 
     return (
         <div className="container-fluid p-2">
-            {/* <h3>Profile Page and this is id number {userId}</h3>
-            <pre>{JSON.stringify(singleUserInfo)}</pre> */}
-            <ManageProfile />
+            <ManageProfile userInfo={singleUserInfo} />
         </div>
     )
 }

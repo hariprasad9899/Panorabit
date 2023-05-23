@@ -1,15 +1,19 @@
-.user-info {
+.address-info {
     .img-row {
         width: 13rem;
         border-radius: 50%;
     }
     .info-attr {
         color: #afabab;
-        font-weight: 500;
+        font-weight: 400;
         letter-spacing: 0.5px;
     }
     .info-val {
         color: #706f6f;
-        font-weight: 700;
+        font-weight: 600;
+    }
+
+    .lat-lng {
+        font-size: 0.7rem;
     }
 }

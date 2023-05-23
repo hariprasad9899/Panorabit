@@ -1,10 +1,10 @@
 import React from 'react'
 import './OptionMenu.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { setMenuState } from '../../reducer/slice/menu'
+import { setMenuState } from '../../../reducer/slice/menu'
 import { nanoid } from '@reduxjs/toolkit'
 
-export default function OptionMenu() {
+export default function OptionMenu({ userInfo }) {
     const { profile, gallery, todo, posts } = useSelector(
         (state) => state.menu.menuOptions
     )
