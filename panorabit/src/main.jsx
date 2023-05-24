@@ -8,10 +8,10 @@ import './assets/styles/main.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <HashRouter>
+        <BrowserRouter>
             <Provider store={store}>
                 <App />
             </Provider>
-        </HashRouter>
+        </BrowserRouter>
     </React.StrictMode>
 )

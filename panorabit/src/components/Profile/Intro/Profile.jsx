@@ -3,25 +3,33 @@ import { useSelector, useDispatch } from 'react-redux'
 import { json, useLocation, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { insertUsers } from '../../../reducer/slice/accounts'
-import ManageProfile from '../ManageProfile'
+import ManageProfile from './ManageProfile'
 import { setCurrentID } from '../../../reducer/slice/currentId'
+import server from '../../../../server'
+import { setUserInfo } from '../../../reducer/slice/userInfo'
+import NoPage from '../../Utilities/Loaders/NoPage'
 
 export default function Profile() {
-    const { userId = 1 } = useParams()
-    const location = useLocation()
+    const { userId } = useParams()
     const dispatch = useDispatch()
-    const users = useSelector((state) => state.account.accountList)
-    let singleUserInfo = users[userId - 1]
+    const currentUserInfo = useSelector((state) => state.user.userInfo)
+    const currentId = useSelector((state) => state.id.currentId)
+
+    useEffect(() => {
+        dispatch(setCurrentID(userId))
+    }, [userId])
 
     useEffect(() => {
         const getUsersInfo = async () => {
             try {
-                const response = await axios.get(
-                    'https://panorbit.in/api/users.json'
-                )
+                const response = await server.get(`/profile/${currentId}`)
                 if (response.status == 200) {
-                    dispatch(insertUsers(response.data.users))
-                    dispatch(setCurrentID(userId - 1))
+                    let currentUserInfoFromApiData = response.data.users.filter(
+                        (item) => {
+                            return item.id == currentId
+                        }
+                    )
+                    dispatch(setUserInfo(currentUserInfoFromApiData[0]))
                 } else {
                     throw new Error('Error fetching data from panorbit')
                 }
@@ -30,11 +38,17 @@ export default function Profile() {
             }
         }
         getUsersInfo()
-    }, [])
+    }, [currentId])
 
     return (
-        <div className="container-fluid p-2">
-            <ManageProfile userInfo={singleUserInfo} />
-        </div>
+        <>
+            {currentId > 10 ? (
+                <NoPage />
+            ) : (
+                <div className="container-fluid p-2">
+                    <ManageProfile userInfo={currentUserInfo} />
+                </div>
+            )}
+        </>
     )
 }

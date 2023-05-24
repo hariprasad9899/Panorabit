@@ -6,6 +6,7 @@ export default function TopPane({ name, profilepicture }) {
         (state) => state.menu.menuOptions
     )
 
+    // return null
     return (
         <div className="row top-pane align-items-center p-2 border-bottom border-bottom-primary">
             <div className="col-6">

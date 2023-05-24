@@ -4,6 +4,7 @@ import accountReducer from '../slice/accounts'
 import loaderReducer from '../slice/Loader'
 import menuReducer from '../slice/menu'
 import idReducer from '../slice/currentId'
+import userReducer from '../slice/userInfo'
 
 export const store = configureStore({
     reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
         loader: loaderReducer,
         menu: menuReducer,
         id: idReducer,
+        user: userReducer,
     },
 })

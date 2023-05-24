@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
 import { Route, Router, Routes } from 'react-router-dom'
-import Profile from './components/Profile/Profile'
+import Profile from './components/Profile/Intro/Profile'
 import { useSelector } from 'react-redux'
 import Intro from './components/Home/Intro/Intro'
 import NoPage from './components/Utilities/Loaders/NoPage'
@@ -18,10 +18,7 @@ function App() {
         <>
             <Routes>
                 <Route path="/" element={<Intro />}></Route>
-                <Route path="about" element={<Profile />} />
-                <Route path="profile" element={<Profile />}>
-                    <Route path=":userId" element={<Profile />}></Route>
-                </Route>
+                <Route path="profile/:userId" element={<Profile />} />
                 <Route path="*" element={<NoPage />} />
             </Routes>
         </>
