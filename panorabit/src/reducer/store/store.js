@@ -5,6 +5,7 @@ import loaderReducer from '../slice/Loader'
 import menuReducer from '../slice/menu'
 import idReducer from '../slice/currentId'
 import userReducer from '../slice/userInfo'
+import userInfoReducer from '../slice/userSlice'
 
 export const store = configureStore({
     reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
         menu: menuReducer,
         id: idReducer,
         user: userReducer,
+        userInfo: userInfoReducer,
     },
 })

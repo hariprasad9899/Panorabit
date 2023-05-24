@@ -30,6 +30,7 @@ app.get("/profile/:userId", (req, res) => {
             const apiData = response.data;
             // const requestedData = getUserInfo(userId, apiData);
             res.send(response.data);
+            console.log("Data sent");
         })
         .catch((error) => {
             // Handle any errors
