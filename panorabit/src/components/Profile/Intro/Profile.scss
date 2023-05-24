@@ -1,5 +1,25 @@
 .profile-component {
     position: relative;
+
+    @keyframes flashAnimation {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .flash-animation {
+        animation-name: flashAnimation;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 10;
+    }
+
     .profile-spinner-overlay {
         position: fixed;
         top: 0;

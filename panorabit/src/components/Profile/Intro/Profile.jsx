@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLocation, useParams } from 'react-router-dom'
 import ManageProfile from './ManageProfile'
@@ -16,10 +16,15 @@ export default function Profile() {
         (state) => state.userInfo
     )
     const location = useLocation()
+    const [flashShow, setFlashShow] = useState(false)
 
     useEffect(() => {
         dispatch(setCurrentID(userId))
     }, [location])
+
+    useEffect(() => {
+        setFlashShow(true)
+    }, [])
 
     useEffect(() => {
         try {
@@ -35,7 +40,11 @@ export default function Profile() {
     }
 
     return (
-        <div className="container-fluid p-2 profile-component">
+        <div
+            className={`container-fluid p-2 profile-component ${
+                flashShow ? 'flash-animation' : ''
+            }`}
+        >
             {isLoading ? <ProfileSpinner /> : <ManageProfile />}
         </div>
     )
