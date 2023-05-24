@@ -5,7 +5,8 @@ import ManageProfile from './ManageProfile'
 import { setCurrentID } from '../../../reducer/slice/currentId'
 import NoPage from '../../Utilities/Loaders/NoPage'
 import { fetchUsers } from '../../../reducer/slice/userSlice'
-import ModalSpinner from '../../Utilities/Loaders/ModalSpinner'
+import './Profile.scss'
+import ProfileSpinner from '../../Utilities/Loaders/ProfileSpinner'
 
 export default function Profile() {
     let { userId } = useParams()
@@ -29,19 +30,13 @@ export default function Profile() {
         }
     }, [currentId])
 
-    if (isLoading) {
-        return <ModalSpinner />
-    } else {
-        return (
-            <>
-                {currentId > 10 ? (
-                    <NoPage />
-                ) : (
-                    <div className="container-fluid p-2">
-                        <ManageProfile />
-                    </div>
-                )}
-            </>
-        )
+    if (currentId > 10) {
+        return <NoPage />
     }
+
+    return (
+        <div className="container-fluid p-2 profile-component">
+            {isLoading ? <ProfileSpinner /> : <ManageProfile />}
+        </div>
+    )
 }
