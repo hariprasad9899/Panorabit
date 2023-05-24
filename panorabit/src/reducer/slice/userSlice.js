@@ -67,7 +67,7 @@ const userSlice = createSlice({
         })
         builder.addCase(fetchUsers.rejected, (state, action) => {
             state.isLoading = false
-            state.requestedUserInfo = { ...state }
+            state.requestedUserInfo = {}
         })
     },
 })

@@ -6,13 +6,12 @@ import { useSelector } from 'react-redux'
 import ModalSpinner from '../../Utilities/Loaders/ModalSpinner'
 
 export default function Intro() {
-    // get is apiLoaded state from the Redux store
-    const apiloaded = useSelector((state) => state.loader.apiLoaded)
+    const { loaded } = useSelector((state) => state.userList)
 
     return (
         <>
             <main className="container-fluid p-0 m-0 landing-page">
-                {!apiloaded ? <ModalSpinner /> : null}
+                {!loaded ? <ModalSpinner /> : null}
                 <>
                     <Wave />
                     <Accounts />
