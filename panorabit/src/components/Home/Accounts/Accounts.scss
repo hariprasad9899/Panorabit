@@ -1,5 +1,6 @@
 .centered-div {
-    width: 30rem;
+    // max-width: 30rem;
+    // min-width: 30%;
     border-radius: 1rem;
     color: #373754;
     background-color: white;
@@ -9,7 +10,7 @@
         border-radius: 1rem 1rem 0rem 0rem;
     }
     .account-list {
-        max-height: 25rem;
+        max-height: 27rem;
         overflow-y: scroll;
         border-radius: 0rem 0rem 1rem 1rem;
         background-color: #ffffff;
@@ -36,13 +37,32 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 576px) {
     .centered-div {
-        width: 80%;
+        .account-list {
+            &::-webkit-scrollbar {
+                width: 6px;
+                height: 8px;
+            }
+        }
     }
 }
+
+@media (min-width: 1400px) {
+    .centered-div {
+        .account-list {
+            &::-webkit-scrollbar {
+                width: 7px;
+                height: 8px;
+            }
+        }
+    }
+}
+
 @media (max-width: 576px) {
     .centered-div {
-        width: 90%;
+        .account-select {
+            padding: 3rem;
+        }
     }
 }

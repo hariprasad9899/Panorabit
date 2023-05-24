@@ -3,13 +3,54 @@
     width: 2rem;
 }
 .acc-profile-username {
+    font-size: 1.2vw;
+    color: #4f4b4b;
+    font-weight: 400;
+}
+.acc-profile-username {
     &:hover {
         cursor: pointer;
-        // font-weight: 500;
     }
 }
 .account-item {
     &:hover {
         background-color: #cfcccc2c;
+    }
+}
+
+@media (min-width: 1400px) {
+    .acc-profile-img {
+        width: 3.4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .acc-profile-img {
+        width: 3rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .acc-profile-img {
+        width: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .acc-profile-img {
+        width: 2.5rem;
+    }
+    .acc-profile-username {
+        margin-left: -0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-item {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .acc-profile-username {
+        font-size: 1rem;
     }
 }
