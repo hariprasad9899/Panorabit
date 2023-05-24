@@ -4,12 +4,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setMenuState } from '../../../reducer/slice/menu'
 import { nanoid } from '@reduxjs/toolkit'
 
-export default function OptionMenu({ userInfo }) {
+export default function OptionMenu() {
     const { profile, gallery, todo, posts } = useSelector(
         (state) => state.menu.menuOptions
     )
     const dispatch = useDispatch()
-    const MENUNAMES = ['Profile', 'Posts', 'Gallery', 'Todo']
 
     const handleMenuOption = (menutype) => {
         dispatch(setMenuState(menutype))

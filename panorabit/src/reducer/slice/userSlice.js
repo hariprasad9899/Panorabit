@@ -38,11 +38,11 @@ const initialState = {
 
 const fetchUsers = createAsyncThunk('users/fetchUsers', async (userID) => {
     try {
-        console.log(userID)
         const response = await server.get(`/profile/${userID}`)
-        return response.data.users.filter((item) => {
-            return item.id == userID
-        })[0]
+        // return response.data.users.filter((item) => {
+        //     return item.id == userID
+        // })[0]
+        return response.data
     } catch (error) {
         // Handle any error
         throw new Error('Error fetching user data')

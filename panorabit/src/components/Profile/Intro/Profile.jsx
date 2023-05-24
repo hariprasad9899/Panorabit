@@ -38,7 +38,7 @@ export default function Profile() {
                     <NoPage />
                 ) : (
                     <div className="container-fluid p-2">
-                        <ManageProfile userInfo={requestedUserInfo} />
+                        <ManageProfile />
                     </div>
                 )}
             </>

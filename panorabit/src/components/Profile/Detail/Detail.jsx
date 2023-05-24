@@ -4,16 +4,13 @@ import './Details.scss'
 import UserInfo from './UserInfo'
 import AddressInfo from './AddressInfo'
 
-export default function Detail({ userInfo }) {
-    // Top pane info
-    const { name, profilepicture } = userInfo
-
+export default function Detail() {
     return (
         <div className="col-md-9 bg bg-white p-3">
-            <TopPane name={name} profilepicture={profilepicture} />
+            <TopPane />
             <div className="row row-info-wrapper">
-                <UserInfo userInfo={userInfo} />
-                <AddressInfo addressInfo={userInfo.address} />
+                <UserInfo />
+                <AddressInfo />
             </div>
         </div>
     )

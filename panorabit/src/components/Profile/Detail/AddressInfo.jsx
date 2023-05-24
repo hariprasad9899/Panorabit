@@ -1,8 +1,13 @@
 import React from 'react'
 import './AddressInfo.scss'
 import GoogleMap from './GoogleMap'
+import { useSelector } from 'react-redux'
 
-export default function AddressInfo({ addressInfo }) {
+export default function AddressInfo() {
+    const { address: addressInfo } = useSelector(
+        (state) => state.userInfo.requestedUserInfo
+    )
+
     return (
         <div className="col-md-7 pt-3 address-info">
             <div className="row">
@@ -35,10 +40,7 @@ export default function AddressInfo({ addressInfo }) {
                 </div>
             </div>
             <div className="row w-100 ms-auto">
-                <GoogleMap
-                    lat={addressInfo.geo.lat || '-37.3159'}
-                    lng={addressInfo.geo.lng || '81.1496'}
-                />
+                <GoogleMap />
             </div>
             <div className="d-flex justify-content-end mt-1 lat-lng text-end">
                 <div className="lat">

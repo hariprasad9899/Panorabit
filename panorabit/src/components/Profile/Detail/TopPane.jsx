@@ -1,9 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-export default function TopPane({ name, profilepicture }) {
+export default function TopPane() {
     const { profile, gallery, todo, posts } = useSelector(
         (state) => state.menu.menuOptions
+    )
+
+    const { name, profilepicture } = useSelector(
+        (state) => state.userInfo.requestedUserInfo
     )
 
     // return null
@@ -18,7 +22,10 @@ export default function TopPane({ name, profilepicture }) {
             <div className="col-6 text-end">
                 <img
                     className="profile-img"
-                    src={profilepicture || 'https://via.placeholder.com/300'}
+                    src={
+                        profilepicture ||
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhCuoop0MD3fNefnFp8SWPdfnsXdOzFBeAQg&usqp=CAU'
+                    }
                 />
                 <span className="user-name ms-1">{name}</span>
             </div>

@@ -3,45 +3,47 @@ import './UserInfo.scss'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-export default function UserInfo({ userInfo }) {
+export default function UserInfo() {
+    const { requestedUserInfo: user } = useSelector((state) => state.userInfo)
+
     return (
         <div className="col-md-5 pt-3 user-info">
             <div className="row mb-2 justify-content-center">
                 <img
                     className="img-row"
                     src={
-                        userInfo.profilepicture ||
-                        'https://via.placeholder.com/300'
+                        user.profilepicture ||
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhCuoop0MD3fNefnFp8SWPdfnsXdOzFBeAQg&usqp=CAU'
                     }
                     alt="a person image"
                 />
             </div>
             <div className="row justify-content-center text-center">
-                <p className="user-name info-val">{userInfo.name || ''}</p>
+                <p className="user-name info-val">{user.name || ''}</p>
             </div>
             <div className="row">
                 <div className="row">
                     <p className="col-6 text-end info-attr">Username : </p>
                     <p className="col-6 text-start p-0 info-val">
-                        {userInfo.username || ''}
+                        {user.username || ''}
                     </p>
                 </div>
                 <div className="row">
                     <p className="col-6 text-end info-attr">e-mail : </p>
                     <p className="col-6 text-start p-0 info-val">
-                        {userInfo.email || ''}
+                        {user.email || ''}
                     </p>
                 </div>
                 <div className="row">
                     <p className="col-6 text-end info-attr">Phone : </p>
                     <p className="col-6 text-start p-0 info-val">
-                        {userInfo.phone || ''}
+                        {user.phone || ''}
                     </p>
                 </div>
                 <div className="row">
                     <p className="col-6 text-end info-attr">Website : </p>
                     <p className="col-6 text-start p-0 info-val">
-                        {userInfo.website || ''}
+                        {user.website || ''}
                     </p>
                 </div>
             </div>
@@ -55,19 +57,19 @@ export default function UserInfo({ userInfo }) {
                 <div className="row">
                     <p className="col-6 text-end info-attr">Name : </p>
                     <p className="col-6 text-start p-0 info-val">
-                        {userInfo.company.name || ''}
+                        {user.company.name || ''}
                     </p>
                 </div>
                 <div className="row">
                     <p className="col-6 text-end info-attr">catchphrase : </p>
                     <p className="col-6 text-start p-0 info-val">
-                        {userInfo.company.catchPhrase || ''}
+                        {user.company.catchPhrase || ''}
                     </p>
                 </div>
                 <div className="row">
                     <p className="col-6 text-end info-attr">bs : </p>
                     <p className="col-6 text-start p-0 info-val">
-                        {userInfo.company.bs || ''}
+                        {user.company.bs || ''}
                     </p>
                 </div>
             </div>

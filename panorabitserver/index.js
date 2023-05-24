@@ -28,8 +28,8 @@ app.get("/profile/:userId", (req, res) => {
         .then((response) => {
             // Handle the response data
             const apiData = response.data;
-            // const requestedData = getUserInfo(userId, apiData);
-            res.send(response.data);
+            const requestedData = getUserInfo(userId, apiData);
+            res.send(requestedData);
             console.log("Data sent");
         })
         .catch((error) => {
